@@ -1,1 +1,1 @@
-minesweep recreaing using js
+minesweeper recreaing using js
