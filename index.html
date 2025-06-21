@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Board</title>
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @keyframes screen-shake {
+      0%   { transform: translate(0, 0); }
+      20%  { transform: translate(-10px, 10px); }
+      40%  { transform: translate(10px, -10px); }
+      60%  { transform: translate(-5px, -5px); }
+      80%  { transform: translate(5px, 5px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .shake {
+      animation: screen-shake 0.3s ease;
+    }
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    .controls {
+      margin-top: 10px;
+    }
+
+    input[type="number"], input[type="button"] {
+      margin: 0 5px;
+      padding: 5px;
+      border: none;
+      border-radius: 4px;
+      width: 60px;
+    }
+
+    input[type="button"] {
+      background-color: #00cc99;
+      color: white;
+      cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+      background-color: #009977;
+    }
+
+    #flag_left, #timer {
+      margin-top: 10px;
+    }
+
+    #broad {
+      display: grid;
+      gap: 0;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Minesweeper</h1>
+
+  <div class="controls">
+    width<input type="number" id="input_width" value="16">
+    height<input type="number" id="input_height" value="16">
+    mines<input type="number" id="input_mines" value="40">
+  </div>
+  <br>
+  <div style="display: flex; gap: 4px;">
+    <canvas id="mine_canvas" width="85" height="50" style="border:1px solid #000000;" style="image-rendering: pixelated;"></canvas>
+    <img id="face_main" width="50" src="sprites/face/normal_unpress.png" style="image-rendering: pixelated;" onclick="buttonClicked()">
+    <canvas id="timer_canvas" width="85" height="50" style="border:1px solid #000000;" style="image-rendering: pixelated;"></canvas>
+  </div>
+
+
+
+  <div id="broad"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
